@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Automati</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="js/bootstrap.js"></script>
+        <script src="js/xregexp-min.js"></script>
+    </head>
+    <body>
+		<div class="container">
+			<div class="hero-unit">
+			<h1>Automātu teorija</h1>
+			<h3>Docētājs: Agris Šostaks</h3>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+			<div class="span12">
+				<h3>Uzdevums:</h3>
+				Noprogrammēt automātu, kas akceptē valodu LA=v v sākas ar 0 un beidzas ar 00} alfabētā Σ=0,1
+				<ul>
+					<li>Drīkst izmantot jebkādu programmēšanas valodu</li>
+					<li>Programmā jābūt funkcijai, kas saņem ievadā simbolu virkni (string) un atgriež jā vai nē (boolean)</li>
+					<li>Jāiesniedz tikai pirmkods (e-studijās)</li>
+				</dl>
+			</div>
+			</div>
+			<div class="row">
+				<div class="span12"><h3>Demonstrācija:</h3></div>
+				<div class="span4">
+					<input type="text" name="Valoda" id="valoda" value="000" size="40" />
+				</div>
+					
+				<div class="span4">
+					<div id="val1"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span12">
+					<h3>Risinājums:</h3>
+					<p>Uzdevums risināts ECMA skriptā, Javascript dialektā</p>
+					<p>Izmantoju: http://cdnjs.cloudflare.com/ajax/libs/xregexp/2.0.0/xregexp-min.js</p>
+					<p>funkcija - XRegExp.test($(this).val(), /^0[0|1]*00$/)</p>
+				</div>
+			</div>
+			
+		<script type="text/javascript">
+			$(document).ready(function () {
+			$('#valoda').keyup(function () { 
+				if (XRegExp.test($(this).val(), /^0[0|1]*00$/)) {	
+					$('#val1').text('Pareiza valoda!').change(); }
+                else { $('#val1').text('Nepareiza valoda!').change(); }
+			});
+			});
+		
+        </script>
+      <hr>
+
+      <footer>
+        <p>&copy; Roberts Eihmanis RE12005, 2013</p>
+      </footer>
+
+    </div> 
+    </body>
+</html>
